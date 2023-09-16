@@ -1,4 +1,6 @@
-﻿var age = 50;
+﻿using Microsoft.VisualBasic.FileIO;
+
+var age = 19;
 var name = "Ewa";
 var gender = "male";
 
@@ -20,4 +22,8 @@ else if (age < 18 && !(gender == "female"))
 else if (age > 33)
 {
     Console.WriteLine("Osoba ma więcej niż 33 lata");
+}
+if (age > 17 && gender == "male" || gender == "female")
+{
+    Console.WriteLine("Osoba jest pełnoletnia");
 }
