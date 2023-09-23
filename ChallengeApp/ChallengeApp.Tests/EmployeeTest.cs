@@ -2,7 +2,7 @@ using System.Reflection.Metadata;
 
 namespace ChallengeApp.Tests
 {
-    public class Tests
+    public class EmployeeTest
     {
         [Test]
         public void WhenUserPositivePoints()
