@@ -17,9 +17,6 @@ namespace TestProjectNEW
 
             Assert.AreEqual(5, result.Average);
 
-
-
-
         }
 
         [Test]
@@ -34,11 +31,6 @@ namespace TestProjectNEW
             var result = employee.GetStatistics();
 
             Assert.AreEqual(8, result.Max);
-
-
-
-
-
         }
 
         [Test]
@@ -53,9 +45,6 @@ namespace TestProjectNEW
 
             Assert.AreEqual(-1, result.Min);
         }
-
-
-
     }
 }
 

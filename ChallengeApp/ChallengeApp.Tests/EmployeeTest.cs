@@ -2,51 +2,56 @@ using System.Reflection.Metadata;
 
 namespace ChallengeApp.Tests
 {
+
     public class EmployeeTest
     {
         [Test]
-        public void WhenUserPositivePoints()
+        public void testGetStatisticsAverage()
         {
+            var employee = new Employee("Stefan", "Kasztanek");
+            employee.AddGrade(5);
+            employee.AddGrade(10);
+            employee.AddGrade(0);
 
-            var harvestingPositiveNumber = new Employee("Jan", "Kowalski", "25");
-            harvestingPositiveNumber.AddScore(8);
-            harvestingPositiveNumber.AddScore(2);
-            harvestingPositiveNumber.AddScore(11);
+            var result = employee.GetStatistics();
 
-            var harvestingPositiveNumberResult = harvestingPositiveNumber.Result;
+            Assert.AreEqual(5, result.Average);
 
-            Assert.AreEqual(21, harvestingPositiveNumberResult);
-           
-        }
 
-        [Test]
-        public void WhenUserNegativePoints()
-        {
 
-            var harvestingNegativeNumber = new Employee("Jan", "Kowalski", "25");
-            harvestingNegativeNumber.AddScore(-8);
-            harvestingNegativeNumber.SubstractScore(2);
-            harvestingNegativeNumber.AddScore(1);
-
-            var harvestingNegativeNumberResult = harvestingNegativeNumber.Result;
-
-            Assert.AreEqual(-9, harvestingNegativeNumberResult);
 
         }
 
         [Test]
-        public void WhenUserSubstractPoints()
+        public void testGetStatisticsMax()
         {
+            var employee = new Employee("Stefan", "Kasztanek");
+            employee.AddGrade(3);
+            employee.AddGrade(3);
+            employee.AddGrade(8);
+            employee.AddGrade(8);
 
-            var user = new Employee("Jan", "Kowalski", "25");
-            user.AddScore(20);
-            user.SubstractScore(5);
-            user.SubstractScore(4);
+            var result = employee.GetStatistics();
 
-            var result = user.Result;
+            Assert.AreEqual(8, result.Max);
 
-            Assert.AreEqual(11, result);
 
+
+
+
+        }
+
+        [Test]
+        public void testGetStatisticsMin()
+        {
+            var employee = new Employee("Stefan", "Kasztanek");
+            employee.AddGrade(-1);
+            employee.AddGrade(1);
+            employee.AddGrade(0);
+
+            var result = employee.GetStatistics();
+
+            Assert.AreEqual(-1, result.Min);
         }
 
 
