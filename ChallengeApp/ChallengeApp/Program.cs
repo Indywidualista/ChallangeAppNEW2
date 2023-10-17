@@ -3,32 +3,28 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        var employee = new Employee("Maciej", "Palec");
-        employee.AddGrade(10);
-        employee.AddGrade(8);
-        employee.AddGrade(5);
-        employee.AddGrade(2);
-        employee.AddGrade(6);
-        var statistics = employee.GetStatistics();
-        var statistics1 = employee.GetStatisticsWithForEach();
-        var statistics2 = employee.GetStatisticsWithFor();
-        var statistics3 = employee.GetStatisticsWithDoWhile();
+        Console.WriteLine("Witamy w programie S.T.A.T do oceny pracowników");
+        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        Console.WriteLine();
 
-        Console.WriteLine("---While---");
-        Console.WriteLine($"Average: {statistics.Average:N2}");
-        Console.WriteLine($"Min: {statistics.Min}");
-        Console.WriteLine($"Max: {statistics.Max}");
-        Console.WriteLine("--ForEach--");
-        Console.WriteLine($"Average: {statistics1.Average:N2}");
-        Console.WriteLine($"Min: {statistics1.Min}");
-        Console.WriteLine($"Max: {statistics1.Max}");
-        Console.WriteLine("----For----");
-        Console.WriteLine($"Average: {statistics2.Average:N2}");
-        Console.WriteLine($"Min: {statistics2.Min}");
-        Console.WriteLine($"Max: {statistics2.Max}");
-        Console.WriteLine("--DoWhile--");
-        Console.WriteLine($"Average: {statistics3.Average:N2}");
-        Console.WriteLine($"Min: {statistics3.Min}");
-        Console.WriteLine($"Max: {statistics3.Max}");
+        var employee = new Employee("Cristiano", "Ronaldo");
+
+        while (true)
+        {
+            Console.WriteLine("Podaj kolejną ocenę pracownika: ");
+            var input = Console.ReadLine();
+            if (input == "q")
+            {
+                break;
+            }
+            employee.AddGrade(input);
+        }
+
+        var statistics = employee.GetStatistics();
+        Console.WriteLine($"AVG: {statistics.Average}");
+        Console.WriteLine($"AVG: {statistics.Min}");
+        Console.WriteLine($"AVG: {statistics.Max}");
+        Console.WriteLine($"AVG; {statistics.AverageLetter}");
     }
+
 }
