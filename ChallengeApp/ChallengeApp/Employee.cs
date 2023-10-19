@@ -22,7 +22,7 @@
             }
             else
             {
-                throw new Exception("invalid grade value");
+                throw new Exception("the value is outside the range 0 to 100");
             }
         }
         public void AddGrade(string grade)
