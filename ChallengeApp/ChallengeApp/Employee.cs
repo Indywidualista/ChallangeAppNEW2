@@ -22,7 +22,7 @@
             }
             else
             {
-                Console.WriteLine("invalid grade value");
+                throw new Exception("invalid grade value");
             }
         }
         public void AddGrade(string grade)
@@ -37,7 +37,7 @@
             }
             else
             {
-                Console.WriteLine("string is not float number or char letter");
+                throw new Exception("string is not float number or char letter");              
             }
         }
         public void AddGrade(double grade)
@@ -86,8 +86,7 @@
                     AddGrade(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter");
-                    break;
+                    throw new Exception("Wrong Letter");                    
             }
         }
         public Statistics GetStatistics()

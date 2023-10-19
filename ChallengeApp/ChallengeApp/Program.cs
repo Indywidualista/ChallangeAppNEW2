@@ -7,7 +7,7 @@ class MainClass
         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Console.WriteLine();
 
-        var employee = new Employee("Cristiano", "Ronaldo");
+        var employee = new Employee();
 
         while (true)
         {
@@ -17,7 +17,15 @@ class MainClass
             {
                 break;
             }
-            employee.AddGrade(input);
+
+            try
+            {
+                employee.AddGrade(input);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception catched: {e.Message}");
+            }
         }
 
         var statistics = employee.GetStatistics();
@@ -26,5 +34,4 @@ class MainClass
         Console.WriteLine($"AVG: {statistics.Max}");
         Console.WriteLine($"AVG; {statistics.AverageLetter}");
     }
-
 }
