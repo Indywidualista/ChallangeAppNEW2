@@ -6,14 +6,17 @@
         public Employee(string name)
             : base(name)
         {
+
         }
         public Employee(string name, string surname)
             : base(name, surname)
         {
+
         }
         public Employee(string name, string surname, char sex)
             : base(name, surname, sex) 
         {
+
         }
         public void AddGrade(float grade)
         {
