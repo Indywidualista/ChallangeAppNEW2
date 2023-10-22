@@ -6,7 +6,6 @@
         {
             this.Name = name;
         }
-
         public Person(string name, string surname)
         {
             this.Name = name;

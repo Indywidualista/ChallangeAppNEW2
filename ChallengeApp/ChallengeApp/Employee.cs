@@ -6,17 +6,14 @@
         public Employee(string name)
             : base(name)
         {
-
         }
         public Employee(string name, string surname)
             : base(name, surname)
         {
-
         }
         public Employee(string name, string surname, char sex)
-            : base(name, surname, sex) 
+            : base(name, surname, sex)
         {
-
         }
         public void AddGrade(float grade)
         {
@@ -30,7 +27,7 @@
             }
         }
         public void AddGrade(string grade)
-         {
+        {
             if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
@@ -41,7 +38,7 @@
             }
             else
             {
-                throw new Exception("string is not float number or char letter");              
+                throw new Exception("string is not float number or char letter");
             }
         }
         public void AddGrade(double grade)
@@ -60,7 +57,7 @@
         }
         public void AddGrade(decimal grade)
         {
-            if(float.TryParse(grade.ToString(),out float result))
+            if (float.TryParse(grade.ToString(), out float result))
             {
                 this.AddGrade(result);
             }
@@ -90,7 +87,7 @@
                     AddGrade(20);
                     break;
                 default:
-                    throw new Exception("Wrong Letter");                    
+                    throw new Exception("Wrong Letter");
             }
         }
         public Statistics GetStatistics()
@@ -124,7 +121,7 @@
                     statistics.AverageLetter = 'D';
                     break;
                 default:
-                    statistics.AverageLetter = 'E';                   
+                    statistics.AverageLetter = 'E';
                     break;
             }
 
