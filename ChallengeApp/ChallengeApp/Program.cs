@@ -7,7 +7,8 @@ class MainClass
         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Console.WriteLine();
 
-        var supervisor = new Supervisor("Kuba", "Gogolewski");
+        var employee = new EmployeeInFile("Kuba", "Gogolewski");
+        employee.AddGrade(0.5f);
 
         while (true)
         {
@@ -20,7 +21,7 @@ class MainClass
 
             try
             {
-                supervisor.AddGrade(input);
+                employee.AddGrade(input);
             }
             catch (Exception e)
             {
@@ -28,7 +29,7 @@ class MainClass
             }
         }
 
-        var statistics = supervisor.GetStatistics();
+        var statistics = employee.GetStatistics();
         Console.WriteLine($"Average: {statistics.Average}");
         Console.WriteLine($"Min: {statistics.Min}");
         Console.WriteLine($"Max: {statistics.Max}");

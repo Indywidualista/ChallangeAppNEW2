@@ -16,8 +16,6 @@
 
         void AddGrade(int grade);
 
-        void AddGrade(decimal grade);
-
         void AddGrade(char grade);
     }
 }
