@@ -7,8 +7,15 @@ class MainClass
         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Console.WriteLine();
 
-        var employee = new EmployeeInFile("Kuba", "Gogolewski");
-        employee.AddGrade(0.5f);
+        var employee = new EmployeeInMemory("Tomasz", "Hajto");
+        employee.GradeAdded += EmployeeGradeAdded;
+
+        void EmployeeGradeAdded(object sender, EventArgs args)
+        {
+            Console.WriteLine("Dodano nową ocenę");
+        }
+
+        employee.AddGrade(0.6f);
 
         while (true)
         {
@@ -35,4 +42,5 @@ class MainClass
         Console.WriteLine($"Max: {statistics.Max}");
         Console.WriteLine($"Letter: {statistics.AverageLetter}");
     }
+
 }
