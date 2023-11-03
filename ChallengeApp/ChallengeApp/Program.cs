@@ -7,16 +7,14 @@ class MainClass
         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Console.WriteLine();
 
-        var employee = new EmployeeInMemory("Tomasz", "Hajto");
+        var employee = new EmployeeInFile("Tomasz", "Hajto");
         employee.GradeAdded += EmployeeGradeAdded;
 
         void EmployeeGradeAdded(object sender, EventArgs args)
         {
             Console.WriteLine("Dodano nową ocenę");
         }
-
-        employee.AddGrade(0.6f);
-
+ 
         while (true)
         {
             Console.WriteLine("Podaj kolejną ocenę pracownika: ");
